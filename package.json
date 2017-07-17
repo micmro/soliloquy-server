@@ -1,0 +1,32 @@
+{
+  "name": "soliloquy-server",
+  "version": "1.0.0",
+  "description": "Backend for the Soliloquy single paticipate chat application.",
+  "main": "index.js",
+  "author": "Michael Mrowetz",
+  "license": "MIT",
+  "scripts": {
+    "start": "node ./index.js",
+    "lint": "eslint .",
+    "test": "mocha */*.spec.js",
+    "coverage": "nyc npm run test --timeout=3000"
+  },
+  "devDependencies": {
+    "chai": "^4.1.0",
+    "eslint": "^4.2.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^5.1.0",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "mocha": "^3.4.2",
+    "nyc": "^11.0.3"
+  },
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "graphql": "^0.10.4",
+    "graphql-server-express": "^1.0.0",
+    "graphql-tools": "^1.1.0"
+  }
+}
