@@ -4,7 +4,9 @@ const user = require('./user')
 const RootSchema = `
 
   type RootQuery {
+    # Gets a User and all their Entries
     user(id: Int!): User
+    # Get all Entries
     entrys: [Entry]
   }
 
@@ -46,6 +48,7 @@ const resolvers = {
     deleteMessage: (_, { id }) => entry.deleteMessage(id)
   },
 
+  /** Extra resolvers for computed attributes */
   User: {
     entries: (user) => entry.getEntrys().filter(e => e.userId === user.id),
     initials: (user) => user.name[0].toUpperCase() + user.surname[0].toUpperCase()
