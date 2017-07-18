@@ -81,18 +81,18 @@ describe('Entry State', function () {
     })
   })
 
-  describe('#deleteMessage()', function () {
+  describe('#deleteEntry()', function () {
     it('can delete Entry', function () {
       const deletedVal = entry.createEntry({
         message: 'Test Message'
       })
       expect(entry.getEntrys().length).to.eq(1)
-      expect(entry.deleteMessage(deletedVal.id)).to.deep.eq(deletedVal)
+      expect(entry.deleteEntry(deletedVal.id)).to.deep.eq(deletedVal)
       expect(entry.getEntrys().length).to.eq(0)
     })
 
     it('returns "null" if entry cannot be found', function () {
-      const deletedVal = entry.deleteMessage(99999, {
+      const deletedVal = entry.deleteEntry(99999, {
         message: `sdfsd`
       })
       expect(deletedVal).to.eq(null)

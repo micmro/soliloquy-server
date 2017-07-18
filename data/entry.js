@@ -81,7 +81,7 @@ const updateEntry = (id, newEntry) => {
  * @param {number} id id of the `Entry` to delete
  * @returns {Entry|null} The deleted `Entry` or `null` if it was not found
  */
-const deleteMessage = (id) => {
+const deleteEntry = (id) => {
   const indexToDelete = findEntryById(id)
   if (indexToDelete === -1) {
     return null
@@ -93,5 +93,5 @@ module.exports = {
   createEntry,
   getEntrys,
   updateEntry,
-  deleteMessage
+  deleteEntry
 }

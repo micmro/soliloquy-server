@@ -24,7 +24,7 @@ const RootSchema = `
     ): Entry
 
     # updates an existing chat Entry
-    deleteMessage(
+    deleteEntry(
       # ID of Entry to delete
       id: Int
     ): Entry
@@ -45,7 +45,7 @@ const resolvers = {
   Mutation: {
     createEntry: (_, { newEntry }) => entry.createEntry(newEntry),
     updateEntry: (_, { id, changes }) => entry.updateEntry(id, changes),
-    deleteMessage: (_, { id }) => entry.deleteMessage(id)
+    deleteEntry: (_, { id }) => entry.deleteEntry(id)
   },
 
   /** Extra resolvers for computed attributes */
