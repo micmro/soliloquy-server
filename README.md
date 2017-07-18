@@ -3,10 +3,10 @@
 Graphql Server for Soliloquy single-user chat app.
 
 # GraphQL Endpoint
-The GraphQL endpoint is available under [`/graphql`](http://localhost:3000/graphql)
+The GraphQL endpoint is available under [`/graphql`](http://localhost:8080/graphql)
 
 # GraphiQL Endpoint
-To see the inteactive GraphiQL UI open [`/graphiql`](http://localhost:3000/graphql)
+To see the inteactive GraphiQL UI open [`/graphiql`](http://localhost:8080/graphql)
 
 # Sample Queries
 
