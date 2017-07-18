@@ -6,14 +6,14 @@ describe('Entry State', function () {
   const reset = function () {
     delete require.cache[require.resolve('./entry')]
     entry = require('./entry')
-    expect(entry.getEntrys().length).to.eq(0, 'entry module could not be reset correctly')
+    expect(entry.getEntries().length).to.eq(0, 'entry module could not be reset correctly')
   }
 
   beforeEach(reset)
   after(reset)
 
-  it('#getEntrys() initially returns empty array', function () {
-    expect(entry.getEntrys()).to.deep.eq([])
+  it('#getEntries() initially returns empty array', function () {
+    expect(entry.getEntries()).to.deep.eq([])
   })
 
   describe('#createEntry()', function () {
@@ -33,12 +33,12 @@ describe('Entry State', function () {
       expect(returnVal.created).to.be.at.least(time)
     })
 
-    it('stored new Entry can be read by #getEntrys()', function () {
+    it('stored new Entry can be read by #getEntries()', function () {
       const createdEntry = entry.createEntry({
         message: 'Test Message'
       })
-      expect(entry.getEntrys().length).to.eq(1)
-      expect(entry.getEntrys()[0]).to.deep.eq(createdEntry)
+      expect(entry.getEntries().length).to.eq(1)
+      expect(entry.getEntries()[0]).to.deep.eq(createdEntry)
     })
   })
 
@@ -62,15 +62,15 @@ describe('Entry State', function () {
       expect(updatedEntry.created).to.eq(initialEntry.created)
     })
 
-    it('updated Entry can be read by #getEntrys()', function () {
+    it('updated Entry can be read by #getEntries()', function () {
       const initialEntry = entry.createEntry({
         message: `Test Message ${Math.random}`
       })
       const updatedEntry = entry.updateEntry(initialEntry.id, {
         message: `Modified Message ${Math.random}`
       })
-      expect(entry.getEntrys().length).to.eq(1)
-      expect(entry.getEntrys()[0]).to.deep.eq(updatedEntry)
+      expect(entry.getEntries().length).to.eq(1)
+      expect(entry.getEntries()[0]).to.deep.eq(updatedEntry)
     })
 
     it('returns "null" if entry cannot be found', function () {
@@ -86,9 +86,9 @@ describe('Entry State', function () {
       const deletedVal = entry.createEntry({
         message: 'Test Message'
       })
-      expect(entry.getEntrys().length).to.eq(1)
+      expect(entry.getEntries().length).to.eq(1)
       expect(entry.deleteEntry(deletedVal.id)).to.deep.eq(deletedVal)
-      expect(entry.getEntrys().length).to.eq(0)
+      expect(entry.getEntries().length).to.eq(0)
     })
 
     it('returns "null" if entry cannot be found', function () {

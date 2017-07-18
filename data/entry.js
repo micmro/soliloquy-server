@@ -51,7 +51,7 @@ const createEntry = (newEntry) => {
  * Get all `Entry`s
  * @returns {Entry[]}
  */
-const getEntrys = () => {
+const getEntries = () => {
   return entriesState
 }
 
@@ -91,7 +91,7 @@ const deleteEntry = (id) => {
 
 module.exports = {
   createEntry,
-  getEntrys,
+  getEntries,
   updateEntry,
   deleteEntry
 }

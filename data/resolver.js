@@ -7,7 +7,7 @@ const RootSchema = `
     # Gets a User and all their Entries
     user(id: Int!): User
     # Get all Entries
-    entrys: [Entry]
+    entries: [Entry]
   }
 
   type Mutation {
@@ -39,7 +39,7 @@ const RootSchema = `
 const resolvers = {
   RootQuery: {
     user: (_, { id }) => user.getUser(id),
-    entrys: () => entry.getEntrys()
+    entries: () => entry.getEntries()
   },
 
   Mutation: {
@@ -50,7 +50,7 @@ const resolvers = {
 
   /** Extra resolvers for computed attributes */
   User: {
-    entries: (user) => entry.getEntrys().filter(e => e.userId === user.id),
+    entries: (user) => entry.getEntries().filter(e => e.userId === user.id),
     initials: (user) => user.name[0].toUpperCase() + user.surname[0].toUpperCase()
   }
 }
