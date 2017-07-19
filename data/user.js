@@ -4,16 +4,16 @@
  */
 
 const usersState = [{
-  id: 1,
+  id: '1',
   name: 'Michael',
   surname: 'Mrowetz'
 }]
 
 /**
  * Returns the default `User`
- * @returns {number} ID of the default `User`
+ * @returns {string} ID of the default `User`
  */
-const getDefaultUserId = () => 1
+const getDefaultUserId = () => '1'
 
 /**
  * Finds and returns a single `User` by it's id

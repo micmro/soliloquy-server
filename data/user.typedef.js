@@ -4,7 +4,7 @@ const User = `
   # A User in the chat app
   type User {
     # ID of the User
-    id: Int!
+    id: ID!
     # Name of the User
     name: String!
     # Surname of the User

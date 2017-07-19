@@ -2,11 +2,11 @@ const Entry = `
   # an entry in the chat
   type Entry {
     # ID of the Entry
-    id: Int!
+    id: ID!
     # Chat Message
     message: String!
     # ID of the User that has created the entry
-    userId: String!
+    userId: ID!
     # Creation time (as Unix timestamp)
     created: Float!
     # Edited time (as Unix timestamp), 'null' if not edited

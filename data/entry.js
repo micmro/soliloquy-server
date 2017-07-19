@@ -2,7 +2,7 @@ const { getDefaultUserId } = require('./user')
 
 /**
  * JSDocs schema of an Entry
- * @typedef {({id?: number, message: string, userId?: number, created?: number, edited?: number})} Entry
+ * @typedef {({id?: string, message: string, userId?: string, created?: number, edited?: number})} Entry
  */
 
 /**
@@ -25,7 +25,7 @@ let idCounter = 0
 
 /**
  * Helper to find an index
- * @param {number} id
+ * @param {string} id
  */
 const findEntryById = (id) => entriesState.findIndex((entry) => entry.id === id)
 
@@ -39,7 +39,7 @@ const createEntry = (newEntry) => {
       message: newEntry.message // use only message for now, but keep as object, to make refactoring easier
     },
     {
-      id: ++idCounter,
+      id: `entry_${++idCounter}`,
       userId: getDefaultUserId(),
       created: Date.now()
     }
@@ -57,7 +57,7 @@ const getEntries = () => {
 
 /**
  * Edit values of a `Entry` in the state
- * @param {number} id  id of the `Entry` to edit
+ * @param {string} id  id of the `Entry` to edit
  * @param {EntryInput} newEntry Partial of `Entry` with values that should be updated
  * @returns {Entry|null} The edited `Entry` or `null` if it was not found
  */
@@ -78,7 +78,7 @@ const updateEntry = (id, newEntry) => {
 
 /**
  * Deletes a `Entry` from the state
- * @param {number} id id of the `Entry` to delete
+ * @param {string} id id of the `Entry` to delete
  * @returns {Entry|null} The deleted `Entry` or `null` if it was not found
  */
 const deleteEntry = (id) => {

@@ -5,7 +5,7 @@ const RootSchema = `
 
   type RootQuery {
     # Gets a User and all their Entries
-    user(id: Int!): User
+    user(id: ID!): User
     # Get all Entries
     entries: [Entry]
   }
@@ -18,7 +18,7 @@ const RootSchema = `
     # updates an existing chat Entry
     updateEntry(
       # ID of Entry to update
-      id: Int!,
+      id: ID!,
       # Object with changed keys
       changes: EntryInput
     ): Entry
@@ -26,7 +26,7 @@ const RootSchema = `
     # updates an existing chat Entry
     deleteEntry(
       # ID of Entry to delete
-      id: Int
+      id: ID
     ): Entry
   }
 

@@ -27,9 +27,9 @@ describe('Entry State', function () {
         .to.be.an('object')
         .to.haveOwnProperty('created')
       expect(returnVal.message).to.eq(dummyMsg)
-      expect(returnVal.userId).to.eq(1)
+      expect(returnVal.userId).to.eq('1')
       expect(returnVal.edited).to.eq(undefined, '"edited" should not undefined for new Entries')
-      expect(returnVal.id).to.eq(1)
+      expect(returnVal.id).to.eq('1')
       expect(returnVal.created).to.be.at.least(time)
     })
 

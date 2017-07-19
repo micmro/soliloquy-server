@@ -13,7 +13,7 @@ To see the inteactive GraphiQL UI open [`/graphiql`](http://localhost:8080/graph
 ## get all data for a user
 ```
 {
-  user(id: 1) {
+  user(id: "1") {
     name,
     initials,
     entries {
@@ -42,7 +42,7 @@ mutation {
 ## updateEntry
 ```
 mutation {
-  updateEntry(id: 4, changes: {message: "update"}) {
+  updateEntry(id: "entry_4", changes: {message: "update"}) {
     id
     message
     created
@@ -55,7 +55,7 @@ mutation {
 ## deleteEntry
 ```
 mutation {
-  deleteEntry(id: 2) {
+  deleteEntry(id: "entry_2") {
     id
   }
 }
