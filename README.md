@@ -2,6 +2,23 @@
 
 Graphql Server for Soliloquy single-user chat app.
 
+# Setup
+```
+yarn install
+yarn start
+```
+
+## Run test
+```
+yarn test
+```
+
+or with coverage
+```
+yarn coverage
+```
+
+
 # GraphQL Endpoint
 The GraphQL endpoint is available under [`/graphql`](http://localhost:8080/graphql)
 
